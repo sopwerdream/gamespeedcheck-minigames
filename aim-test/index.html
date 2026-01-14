@@ -19,8 +19,17 @@
   <!-- TITLE -->
   <section id="title" class="screen">
     <h1 class="game-title">AIM TEST</h1>
-    <p class="subtitle">GameSpeedCheck Mini Game</p>
-    <button id="startBtn" class="btn start">START</button>
+    <p class="subtitle">Standard Benchmark Mode</p>
+
+    <button id="startBtn" class="btn primary">START</button>
+
+    <!-- Back to Website -->
+    <a
+      class="btn link"
+      href="https://gamespeedcheck.com"
+    >
+      Back to GameSpeedCheck
+    </a>
   </section>
 
   <!-- GAME -->
@@ -29,7 +38,7 @@
       <div>TIME <span id="time">30.0</span>s</div>
       <div>SCORE <span id="score">0</span></div>
       <div>ACC <span id="acc">0</span>%</div>
-      <div>H / M <span id="hits">0</span>/<span id="misses">0</span></div>
+      <div>H/M <span id="hits">0</span>/<span id="misses">0</span></div>
     </header>
 
     <div id="stage">
@@ -40,11 +49,16 @@
   <!-- RESULT -->
   <section id="result" class="screen">
     <h2>RESULT</h2>
-    <p>SCORE: <span id="rScore">0</span></p>
-    <p>ACCURACY: <span id="rAcc">0</span>%</p>
-    <p>HITS: <span id="rHits">0</span></p>
-    <p>MISSES: <span id="rMisses">0</span></p>
-    <button id="retryBtn" class="btn">RETRY</button>
+
+    <div class="result-row">Score: <span id="rScore">0</span></div>
+    <div class="result-row">Accuracy: <span id="rAcc">0</span>%</div>
+    <div class="result-row">Hits: <span id="rHits">0</span></div>
+    <div class="result-row">Misses: <span id="rMisses">0</span></div>
+
+    <div class="result-actions">
+      <button id="retryBtn" class="btn primary">RETRY</button>
+      <button id="backBtn" class="btn">BACK</button>
+    </div>
   </section>
 
 </div>
