@@ -2,14 +2,14 @@
 
 body {
   font-family: system-ui, Arial;
-  background: radial-gradient(circle at top, #0f2d2d, #05080c);
+  background: radial-gradient(circle at top, #0e2a2a, #05080c);
   color: #eafff7;
   height: 100vh;
 }
 
-#app { width:100%; height:100%; }
+#app { width: 100%; height: 100%; }
 
-/* SCREENS */
+/* Screens */
 .screen {
   position: absolute;
   inset: 0;
@@ -20,7 +20,7 @@ body {
 }
 .screen.active { display: flex; }
 
-/* LOADING */
+/* Loading */
 .spinner {
   width: 64px;
   height: 64px;
@@ -29,37 +29,48 @@ body {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
-.loading-text { margin-top: 16px; opacity:.7; }
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.loading-text {
+  margin-top: 16px;
+  opacity: .7;
 }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* TITLE */
+/* Title */
 .game-title {
   font-size: 64px;
   letter-spacing: 4px;
-  margin-bottom: 10px;
 }
-.subtitle { opacity:.7; margin-bottom: 40px; }
+.subtitle {
+  margin: 12px 0 40px;
+  opacity: .7;
+}
 
-/* BUTTON */
+/* Buttons */
 .btn {
+  margin-top: 12px;
   padding: 14px 32px;
-  font-size: 18px;
-  border-radius: 30px;
+  font-size: 16px;
+  border-radius: 28px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg,#39ff88,#ff8a2a);
-  color: #042016;
-  font-weight: bold;
+  font-weight: 700;
 }
-.btn:hover { filter: brightness(1.1); }
+.btn.primary {
+  background: linear-gradient(135deg, #39ff88, #ff8a2a);
+  color: #042016;
+}
+.btn.primary:hover { filter: brightness(1.1); }
 
-/* GAME */
+.btn.link {
+  background: none;
+  color: #aaffdd;
+  text-decoration: underline;
+}
+
+/* Game HUD */
 .hud {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -70,23 +81,37 @@ body {
   font-size: 14px;
 }
 
+/* Stage */
 #stage {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
+/* Target */
 #target {
   position: absolute;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   background:
-    radial-gradient(circle,#39ff88 0 20%,transparent 21%),
-    radial-gradient(circle,#ff8a2a 0 40%,transparent 41%);
+    radial-gradient(circle,#39ff88 0 18%,transparent 19%),
+    radial-gradient(circle,#ff8a2a 0 38%,transparent 39%);
   cursor: crosshair;
+  transition: transform .08s ease;
 }
 
-/* RESULT */
-#result h2 { font-size: 40px; margin-bottom: 20px; }
-#result p { margin: 6px 0; font-size: 18px; }
+/* Result */
+#result h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.result-row {
+  margin: 6px 0;
+  font-size: 18px;
+}
+.result-actions {
+  margin-top: 26px;
+  display: flex;
+  gap: 14px;
+}
