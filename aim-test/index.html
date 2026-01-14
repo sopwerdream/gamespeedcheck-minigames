@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aim Test (Web) — GameSpeedCheck</title>
+  <meta name="description" content="Test your aim, reaction speed, and accuracy." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <!-- Top HUD -->
+    <header class="hud">
+      <div class="brand">
+        <div class="logo-dot"></div>
+        <div>
+          <div class="brand-title">AIM TEST</div>
+          <div class="brand-sub">GameSpeedCheck Mini Game</div>
+        </div>
+      </div>
+
+      <div class="hud-cards">
+        <div class="card">
+          <div class="label">TIME</div>
+          <div class="value"><span id="timeLeft">30.0</span><span class="unit">s</span></div>
+        </div>
+        <div class="card accent">
+          <div class="label">SCORE</div>
+          <div class="value"><span id="score">0</span></div>
+        </div>
+        <div class="card">
+          <div class="label">ACCURACY</div>
+          <div class="value"><span id="accuracy">0</span><span class="unit">%</span></div>
+        </div>
+        <div class="card">
+          <div class="label">HITS / MISSES</div>
+          <div class="value"><span id="hits">0</span><span class="unit">/</span><span id="misses">0</span></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Game Stage -->
+    <main class="stage" id="stage" aria-label="Aim test stage">
+      <!-- Optional background image -->
+      <div class="bg" aria-hidden="true"></div>
+
+      <!-- Target element -->
+      <button id="target" class="target" type="button" aria-label="Target"></button>
+
+      <!-- Center overlay -->
+      <section class="overlay" id="overlay">
+        <div class="panel">
+          <div class="panel-title">Aim Test (Web)</div>
+          <p class="panel-desc">
+            Click the target as fast and accurately as possible.<br />
+            Hit = +10, Miss = −2. Target shrinks over time.
+          </p>
+
+          <div class="panel-actions">
+            <button class="btn primary" id="startBtn" type="button">START (30s)</button>
+            <button class="btn ghost" id="practiceBtn" type="button">PRACTICE</button>
+          </div>
+
+          <div class="panel-hint">
+            Desktop recommended • Fullscreen optional • No backend
+          </div>
+        </div>
+      </section>
+
+      <!-- Results overlay -->
+      <section class="overlay" id="resultOverlay" hidden>
+        <div class="panel">
+          <div class="panel-title">RESULT</div>
+
+          <div class="result-grid">
+            <div class="result-item">
+              <div class="label">SCORE</div>
+              <div class="value" id="rScore">0</div>
+            </div>
+            <div class="result-item">
+              <div class="label">ACCURACY</div>
+              <div class="value"><span id="rAcc">0</span><span class="unit">%</span></div>
+            </div>
+            <div class="result-item">
+              <div class="label">HITS</div>
+              <div class="value" id="rHits">0</div>
+            </div>
+            <div class="result-item">
+              <div class="label">MISSES</div>
+              <div class="value" id="rMisses">0</div>
+            </div>
+          </div>
+
+          <p class="panel-desc subtle" id="rNote"></p>
+
+          <div class="panel-actions">
+            <button class="btn primary" id="retryBtn" type="button">RETRY</button>
+            <button class="btn ghost" id="copyBtn" type="button">COPY SUMMARY</button>
+          </div>
+
+          <div class="panel-hint">
+            Tip: Embed this page in Bolt with an iframe. (Supports postMessage)
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer tiny -->
+      <div class="stage-footer">
+        <span class="kbd">Click</span> to shoot • <span class="kbd">Esc</span> to exit fullscreen
+      </div>
+    </main>
+
+    <footer class="foot">
+      <span>© GameSpeedCheck • Mini Games</span>
+      <a class="link" href="https://gamespeedcheck.com" target="_blank" rel="noreferrer">Back to gamespeedcheck.com</a>
+    </footer>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
